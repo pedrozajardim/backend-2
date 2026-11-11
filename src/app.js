@@ -8,8 +8,8 @@ app.use(express.json())
 app.use('/api/events', eventsRouter)
 app.use('/api/sessions', sessionsRouter)
 
-app.get('/api/health',(req,res) =>{
-    res.json({status: 'ok', messagge: 'servidor activo'})
+app.get('/api/health', (req, res) => {
+    res.json({ status: 'ok', message: 'Servidor activo' })
 })
 
 export default app

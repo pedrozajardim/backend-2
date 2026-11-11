@@ -1,3 +1,3 @@
-export const getEvent = (req,res) =>{
-    res.json({status:'sucess', payload: []})
+export const getEvents = (req,res) =>{
+    res.json({status:'success', payload: []})
 }

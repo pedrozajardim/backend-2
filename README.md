@@ -17,7 +17,37 @@ npm run dev
 npm start
 
 ## Estructura de carpetas
-(pega aquí el árbol de carpetas)
+```
+proyecto-backend2/
+├── src/
+│   ├── app.js                  # configura Express
+│   ├── server.js               # levanta el servidor
+│   ├── config/
+│   │   └── env.config.js
+│   ├── controllers/
+│   │   ├── events.controller.js
+│   │   └── sessions.controller.js
+│   ├── dao/
+│   │   └── .gitkeep
+│   ├── middlewares/
+│   │   └── .gitkeep
+│   ├── models/
+│   │   ├── Event.js
+│   │   └── User.js
+│   ├── repositories/
+│   │   └── .gitkeep
+│   ├── routes/
+│   │   ├── events.router.js
+│   │   └── sessions.router.js
+│   ├── services/
+│   │   └── .gitkeep
+│   └── utils/
+│       └── .gitkeep
+├── .env.example
+├── .gitignore
+├── package.json
+└── README.md
+```
 
 ## Rutas disponibles
 - GET /api/health
