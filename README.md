@@ -3,44 +3,54 @@
 Temática: plataforma de meetups para una comunidad de programadores, donde los usuarios pueden inscribirse a eventos según el cupo disponible.
 
 ## Tecnologías
-Node.js, Express, dotenv, ESM
+Node.js, Express, MongoDB (Mongoose), dotenv, ESM
 
 ## Instalación
+```bash
 npm install
+```
 
 ## Variables de entorno
 Copia `.env.example` a `.env` y completa los valores:
-PORT, NODE_ENV, MONGO_URL, JWT_SECRET
+```
+PORT
+NODE_ENV
+MONGO_URL
+JWT_SECRET
+```
 
 ## Cómo ejecutar
-npm run dev
-npm start
+```bash
+npm run dev   # modo desarrollo
+npm start     # modo producción
+```
 
 ## Estructura de carpetas
 ```
 proyecto-backend2/
 ├── src/
-│   ├── app.js                  # configura Express
-│   ├── server.js               # levanta el servidor
+│   ├── app.js                      # configura Express
+│   ├── server.js                   # levanta el servidor
 │   ├── config/
-│   │   └── env.config.js
+│   │   ├── env.config.js
+│   │   └── db.config.js
 │   ├── controllers/
 │   │   ├── events.controller.js
 │   │   └── sessions.controller.js
 │   ├── dao/
-│   │   └── .gitkeep
+│   │   └── events.dao.js
 │   ├── middlewares/
 │   │   └── .gitkeep
 │   ├── models/
 │   │   ├── Event.js
 │   │   └── User.js
 │   ├── repositories/
-│   │   └── .gitkeep
+│   │   └── events.repository.js
 │   ├── routes/
 │   │   ├── events.router.js
 │   │   └── sessions.router.js
 │   ├── services/
-│   │   └── .gitkeep
+│   │   └── events.service.js
 │   └── utils/
 │       └── .gitkeep
 ├── .env.example
@@ -50,6 +60,6 @@ proyecto-backend2/
 ```
 
 ## Rutas disponibles
-- GET /api/health
-- GET /api/events
-- GET /api/sessions
+- `GET /api/health`: estado del servidor
+- `GET /api/events`: lista de eventos
+- `GET /api/sessions`: estructura inicial de sesiones
