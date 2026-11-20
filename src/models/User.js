@@ -1,9 +1,16 @@
-export default class User {
-    constructor({ first_name, last_name, email, password, role = 'user' }) {
-        this.first_name = first_name
-        this.last_name = last_name
-        this.email = email
-        this.password = password
-        this.role = role
+import mongoose, { Model, Schema } from "mongoose"
+
+const UserSchema = new mongoose.Schema(
+    {
+        first_name: { type: String, required: true },
+        last_name: {type:String, required:true},
+        email: {type:String, required:true, unique:true},
+        role:{
+            type: String,
+            enum:["admin","user","organizer"],
+            default: "user"
+        }
     }
-}
+)
+
+export const UserModel = mongoose.model("Users", UserSchema)

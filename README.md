@@ -36,30 +36,45 @@ proyecto-backend2/
 │   │   └── db.config.js
 │   ├── controllers/
 │   │   ├── events.controller.js
-│   │   └── sessions.controller.js
+│   │   ├── sessions.controller.js
+│   │   └── users.controller.js
 │   ├── dao/
-│   │   └── events.dao.js
+│   │   ├── events.dao.js
+│   │   └── users.dao.js
 │   ├── middlewares/
-│   │   └── .gitkeep
+│   │   └── middleware.js           # errorHandler
 │   ├── models/
 │   │   ├── Event.js
 │   │   └── User.js
 │   ├── repositories/
-│   │   └── events.repository.js
+│   │   ├── events.repository.js
+│   │   └── users.repository.js
 │   ├── routes/
 │   │   ├── events.router.js
-│   │   └── sessions.router.js
-│   ├── services/
-│   │   └── events.service.js
-│   └── utils/
-│       └── .gitkeep
+│   │   ├── sessions.router.js
+│   │   └── users.router.js
+│   └── services/
+│       ├── events.service.js
+│       └── users.service.js
 ├── .env.example
 ├── .gitignore
 ├── package.json
 └── README.md
 ```
 
+## Modelo de usuario
+| Campo | Tipo | Detalle |
+|---|---|---|
+| first_name | String | obligatorio |
+| last_name | String | obligatorio |
+| email | String | obligatorio, único |
+| role | String | `user` o `admin`, por defecto `user` |
+
+## Manejo de errores
+El middleware `errorHandler` (`src/middlewares/middleware.js`) captura los errores de las rutas y responde en JSON con el status correspondiente.
+
 ## Rutas disponibles
 - `GET /api/health`: estado del servidor
 - `GET /api/events`: lista de eventos
 - `GET /api/sessions`: estructura inicial de sesiones
+- `GET /api/users`: lista de usuarios

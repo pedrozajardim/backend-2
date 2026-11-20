@@ -3,11 +3,11 @@ import mongoose, { Schema,model } from "mongoose"
 
 const EventSchema = new mongoose.Schema(
     {
-        title:{ type:String, require:true},
-        descripcion:{ type:String,require:true},
-        capacity:{type:Number,require:true},
-        location:{type:String,require:true},
-        date:{type:Date,require:true}
+        title:{ type:String, required:true},
+        description:{ type:String,required:true},
+        capacity:{type:Number,required:true},
+        location:{type:String,required:true},
+        date:{type:Date,required:true}
     }
 )
 

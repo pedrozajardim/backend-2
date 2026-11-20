@@ -1,4 +1,4 @@
-import DaoEvents from "../dao/event.dao.js"
+import DaoEvents from "../dao/events.dao.js"
 
 class EventsRepository{
     constructor(dao = new DaoEvents){
