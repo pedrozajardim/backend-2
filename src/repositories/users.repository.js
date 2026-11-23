@@ -6,9 +6,13 @@ class UsersRepository{
         this.dao = dao
     }
 
-    async getAll(){
-        return await this.dao.getAll()
+
+    async created(newUser){
+        return await this.dao.created(newUser)
     }
+
+    async findByEmail(email){
+        return await this.dao.findByEmail(email)  }
 }
 
 export default UsersRepository;
