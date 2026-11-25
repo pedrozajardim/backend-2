@@ -1,6 +1,6 @@
 # Plataforma de Eventos
 
-Temática: plataforma de meetups para una comunidad de programadores, donde los usuarios pueden inscribirse a eventos según el cupo disponible.
+Temática: plataforma para una veterinaria, donde los dueños de mascotas pueden reservar turnos de atención (baño, corte, vacunas, consultas) según el cupo disponible, y consultar el historial de servicios realizados a su mascota.
 
 ## Tecnologías
 Node.js, Express, MongoDB (Mongoose), dotenv, ESM, bcrypt, validator
