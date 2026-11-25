@@ -6,23 +6,21 @@ const sessionsService = new SessionsService()
 class SessionsController {
 
 
-    static async getSessions(req, res) {
+    static async getSessions(req, res,next) {
         try {
             const sessions = await sessionsService.getSessions()
             res.status(200).json({ status: 'success', payload: sessions })
         } catch (error) {
-            console.log(error)
-            res.status(500).json({status:"error",message: error.message})
+            next(error)
         }
     }
 
-    static async register(req,res){
+    static async register(req,res,next){
         try {
             const user = await sessionsService.register(req.body)
             res.status(201).json({status:"success", payload: user})
         } catch (error) {
-            console.log(error)
-            res.status(error.status || 500).json({status: "error", message: error.message})
+            next(error)
         }
     }
 }

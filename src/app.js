@@ -10,11 +10,12 @@ app.use(express.json())
 app.use('/api/events', eventsRouter)
 app.use('/api/sessions', sessionsRouter)
 app.use('/api/users', usersRouter)
-app.use(errorHandler)
 
 app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', message: 'Servidor activo' })
 })
+
+app.use(errorHandler)
 
 
 
